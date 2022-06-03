@@ -28,7 +28,7 @@ pipeline {
 
         stage('deploy') {
             steps {
-                sh 'helm install --name spring-boot-helloworld -f ./spring-boot-helloworld-chart/values.yaml ./spring-boot-helloworld-chart/'
+                sh 'helm install spring-boot-helloworld -f ./spring-boot-helloworld-chart/values.yaml ./spring-boot-helloworld-chart/'
             }
         }
     }
