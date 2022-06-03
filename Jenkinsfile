@@ -9,6 +9,11 @@ pipeline {
         checkout scm
       }
     }
+    stage("maven build") {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
 
         stage("docker build") {
             steps {
