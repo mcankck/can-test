@@ -18,6 +18,12 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+    
+    stage("Sonarqube Analyzing") {
+            steps {
+                sh 'mvn sonar:sonar -Dsonar.projectKey=cankck -Dsonar.host.url=http://192.168.1.214:9000 -Dsonar.login=ac01928679ca493b1b85a181b344d20119684d42'
+            }
+        }  
 
         stage("docker build") {
             steps {
