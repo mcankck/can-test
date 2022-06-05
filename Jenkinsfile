@@ -1,5 +1,9 @@
 pipeline {
 
+  environment {
+     def scannerHome = tool 'test'
+  }
+  
   agent any
 
   stages {
